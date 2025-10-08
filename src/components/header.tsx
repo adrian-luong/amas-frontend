@@ -6,7 +6,6 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
 } from "@/components/shadcn/navigation-menu"
-import Link from "next/link"
 import ThemeToggle from "./theme/theme.toggle"
 
 const pages = [
@@ -31,7 +30,7 @@ const pages = [
 export default function Header() {
     return (
         <header className="flex">
-            <NavigationMenu viewport={false} className="p-2 mr-auto">
+            <NavigationMenu viewport={false} className="p-2 mr-auto" >
                 <NavigationMenuList>
                     <NavigationMenuItem>
                         <NavigationMenuTrigger>Features</NavigationMenuTrigger>
@@ -46,13 +45,13 @@ export default function Header() {
                                             </p>
                                         </NavigationMenuLink>
                                     </li>
-                                    // <HeaderLink key={index} title={page.title} href={page.url}>{page.desc}</HeaderLink>
                                 ))}
                             </ul>
                         </NavigationMenuContent>
                     </NavigationMenuItem>
                 </NavigationMenuList>
             </NavigationMenu>
+
             <NavigationMenu viewport={false} className="p-2 ml-auto mr-2">
                 <NavigationMenuList>
                     <NavigationMenuItem>
