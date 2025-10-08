@@ -26,8 +26,7 @@ export default function RootLayout({ children, }: Readonly<PropsWithChildren>) {
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <Header />
-          <div className="p-6">{children}</div>
+          {children}
         </ThemeProvider>
       </body>
     </html>
