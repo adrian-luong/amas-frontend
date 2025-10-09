@@ -37,8 +37,18 @@ export default function Header() {
       <NavigationMenu viewport={false} className="p-2 mr-auto">
         <NavigationMenuList>
           <NavigationMenuItem>
+            <NavigationMenuLink href="/">
+              <h6
+                className="text-2xl font-bold tracking-wide font-mono"
+                color="inherit"
+              >
+                AMAS
+              </h6>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
             <NavigationMenuTrigger>Features</NavigationMenuTrigger>
-            <NavigationMenuContent>
+            <NavigationMenuContent className="z-2">
               <ul className="grid w-[600px] gap-2 md:w-[750px] md:grid-cols-2 lg:w-[1000px]">
                 {pages.map((page, index) => (
                   <li key={index}>
