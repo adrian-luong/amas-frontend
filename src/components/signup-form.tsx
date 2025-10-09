@@ -1,17 +1,15 @@
-import { GalleryVerticalEnd } from "lucide-react"
-import { ComponentProps } from "react"
+import { ComponentProps } from "react";
 
-import cn from "@/utils/cn.helper"
-import { Button } from "@/components/shadcn/button"
+import cn from "@/utils/cn.helper";
+import { Button } from "@/components/shadcn/button";
 import {
   Field,
   FieldDescription,
   FieldGroup,
   FieldLabel,
-  FieldSeparator,
-} from "@/components/shadcn/field"
-import Input from "@/components/shadcn/input"
-import Link from "next/link"
+} from "@/components/shadcn/field";
+import Input from "@/components/shadcn/input";
+import Link from "next/link";
 
 export default function SignupForm({
   className,
@@ -73,5 +71,5 @@ export default function SignupForm({
         and <a href="#">Privacy Policy</a>.
       </FieldDescription>
     </div>
-  )
+  );
 }

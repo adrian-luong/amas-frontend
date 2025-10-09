@@ -17,16 +17,17 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "AI Messenger Assistant for Sellers",
-  description: "Trợ lý AI giúp người mới tìm kiếm, phân tích, và bắt đầu copy trading trên Binance một cách nhanh chóng (dưới 5 phút).",
+  description:
+    "Trợ lý AI giúp người mới tìm kiếm, phân tích, và bắt đầu copy trading trên Binance một cách nhanh chóng (dưới 5 phút).",
 };
 
-export default function RootLayout({ children, }: Readonly<PropsWithChildren>) {
+export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <ClientProvider>
-          {children}
-        </ClientProvider>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <ClientProvider>{children}</ClientProvider>
       </body>
     </html>
   );

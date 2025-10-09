@@ -1,4 +1,4 @@
-import { ComponentProps, PropsWithChildren } from "react"
+import { ComponentProps, PropsWithChildren } from "react";
 
 enum TextVariants {
   default = "",
@@ -9,7 +9,7 @@ enum TextVariants {
   h4 = "scroll-m-20 text-xl font-semibold tracking-tight",
   h3 = "scroll-m-20 text-2xl font-semibold tracking-tight",
   h2 = "scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0",
-  h1 = "scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance"
+  h1 = "scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance",
 }
 
 enum TextSize {
@@ -19,32 +19,37 @@ enum TextSize {
 }
 
 interface TextProps {
-  variant?: keyof typeof TextVariants
-  size?: keyof typeof TextSize
+  variant?: keyof typeof TextVariants;
+  size?: keyof typeof TextSize;
 }
 
 export default function Text({
-  variant = 'default',
-  size = 'default',
-  children, className
-}: TextProps & PropsWithChildren & ComponentProps<"p" | "h1" | "h2" | "h3" | "h4" | "code" | "blockquote" | "small">) {
-  const sizeClasses = TextSize[size]
-  const variantClasses = TextVariants[variant]
-  const finalClasses = [variantClasses, sizeClasses, className].join(' ')
+  variant = "default",
+  size = "default",
+  children,
+  className,
+}: TextProps &
+  PropsWithChildren &
+  ComponentProps<
+    "p" | "h1" | "h2" | "h3" | "h4" | "code" | "blockquote" | "small"
+  >) {
+  const sizeClasses = TextSize[size];
+  const variantClasses = TextVariants[variant];
+  const finalClasses = [variantClasses, sizeClasses, className].join(" ");
 
   switch (variant) {
-    case 'h1':
-      return <h1 className={finalClasses}>{children}</h1>
-    case 'h2':
-      return <h2 className={finalClasses}>{children}</h2>
-    case 'h3':
-      return <h3 className={finalClasses}>{children}</h3>
-    case 'h4':
-      return <h4 className={finalClasses}>{children}</h4>
-    case 'quote':
-      return <blockquote className={finalClasses}>{children}</blockquote>
-    case 'code':
-      return <code className={finalClasses}>{children}</code>
+    case "h1":
+      return <h1 className={finalClasses}>{children}</h1>;
+    case "h2":
+      return <h2 className={finalClasses}>{children}</h2>;
+    case "h3":
+      return <h3 className={finalClasses}>{children}</h3>;
+    case "h4":
+      return <h4 className={finalClasses}>{children}</h4>;
+    case "quote":
+      return <blockquote className={finalClasses}>{children}</blockquote>;
+    case "code":
+      return <code className={finalClasses}>{children}</code>;
     default:
       return <p className={finalClasses}>{children}</p>;
   }
